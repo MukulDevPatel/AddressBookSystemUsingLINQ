@@ -68,6 +68,16 @@ namespace AddressBookSystemUsingLINQ
                 person.Remove(person.Find(c => c.FirstName == name));
             }
         }
-        
+        public void RetrieveDetails(List<Person> person)
+        {
+            Console.Write("Enter City or State: ");
+            string cityOrState = Console.ReadLine();
+            var result = person.Where(p => p.City == cityOrState || p.State == cityOrState);
+            foreach (var contact in result)
+            {
+                Console.WriteLine(contact.FirstName + "\n" + contact.LastName + "\n" + contact.Address + "\n" + contact.City + "\n" +
+                contact.State + "\n" + contact.Zip + "\n" + contact.PhoneNumber + "\n" + contact.Email);
+            }
+        }
     }  
 }
