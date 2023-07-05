@@ -44,7 +44,7 @@ class Program
                     break;
                 case 2:
                     AddressBook addressBook = new AddressBook();
-                    addressBook.EditContact();
+                    addressBook.EditContact(list);
                     break;
                 case 3:
                     flag = false;
