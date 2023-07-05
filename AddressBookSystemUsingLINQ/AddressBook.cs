@@ -57,6 +57,17 @@ namespace AddressBookSystemUsingLINQ
                     break;
             }
         }
+
+        public void DeleteContact(List<Person> person)
+        {
+            Console.Write("Enter a name for delete contact: ");
+            string name = Console.ReadLine();
+            person = person.Where(c => c.FirstName != name).ToList();
+            if(person.Find(c => c.FirstName == name) != null)
+            {
+                person.Remove(person.Find(c => c.FirstName == name));
+            }
+        }
         
     }  
 }

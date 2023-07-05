@@ -29,7 +29,7 @@ class Program
         while (flag)
         {
             Console.WriteLine("\nSelect options");
-            Console.WriteLine("1. Insert New Contacts \n2. Edit Contacts \n3. Exit");
+            Console.WriteLine("1. Insert New Contacts \n2. Edit Contacts \n3. Delete Contacts\n4. Exit");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -47,6 +47,10 @@ class Program
                     addressBook.EditContact(list);
                     break;
                 case 3:
+                    AddressBook addressBook1 = new AddressBook();
+                    addressBook1.DeleteContact(list);
+                    break;
+                case 4:
                     flag = false;
                     break;
             }
